@@ -1,0 +1,630 @@
+<!-- <div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp3724290.jpg" alt="">
+                <h6>All menus</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')" >
+                <img style="width: 100px; height:200 px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp3376127.jpg" alt="">
+                <h6>Pizza</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fashion')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp11905768.jpg" alt="">
+                <h6>Burger</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://th.bing.com/th/id/R.a3fbf2b7777793a17ef7b84a6d40fed3?rik=07Ndrldi4e7Neg&riu=http%3a%2f%2fstatic.businessinsider.com%2fimage%2f538798d3eab8eae80cb36475%2fimage.jpg&ehk=WMpCTGoO3Ex2QQ9MRjXTUOXDWTjE6hTflv9DBbKJQ6Y%3d&risl=&pid=ImgRaw&r=0" alt="">
+                <h6>Italian</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/wp/wp7845828.jpg" alt="">
+                <h6>South Indian</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp10495609.jpg" alt="">
+                <h6>North Indian</h6>
+            </a>
+        </div>
+
+
+        <div class="item">
+            <a (click)="filter('electronics')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://images.pexels.com/photos/452737/pexels-photo-452737.jpeg?cs=srgb&dl=pexels-artem-beliaikin-452737.jpg&fm=jpg" alt="">
+                <h6>Shakes</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ₹{{item.price}}</p>
+                <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+
+
+
+<div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.6wa6G0-LpM-K_ijB8IQqfgHaHa?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Brownie</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.C7OCKQkhrA73uxCovRtIagHaHa?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cold Coffee</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.4c30510b264efab38ee186c458c6c684?rik=W51Fbn6dqPOGqQ&riu=http%3a%2f%2fmedia-cdn.tripadvisor.com%2fmedia%2fphoto-s%2f06%2f5d%2f25%2f90%2ffergburger.jpg&ehk=alGHMCQcQ3hgNBDKXLBqSVaU6w94kVVuiY3qvaCnj8Q%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Burger</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.47e00e05f8d6528583202cd96e18992a?rik=h%2fdgUexj7W7KZg&riu=http%3a%2f%2fimages4.fanpop.com%2fimage%2fphotos%2f20400000%2fPIZZA-pizza-20461160-1600-1200.jpg&ehk=Qw%2bjfQA1O8UbLkJhLixjt0h93BHTRzHfXScMqKg1h70%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pizza</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.542a8e597d500439bf8789928c996011?rik=3dW7vfYZGoCRPw&riu=http%3a%2f%2fwww.ifairer.com%2farticle_image%2f1476160008-ifairer.jpg&ehk=6JqEDFTVl3VJhLaE%2fpIVqp%2bxmJNTgj9XMQ5zvntq7G4%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Veg Momos</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.t7w3M44oaefUbkvLP9E6TAAAAA?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Soup</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://keeprecipes.com/sites/keeprecipes/files/15407_1452208506_0.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Tartufo</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.0c1cbf3d98be84f039ee1fda9e595d36?rik=4ZKrFoveOXsy1g&riu=http%3a%2f%2fi.f1g.fr%2fmedia%2fext%2f1900x1900%2fmadame.lefigaro.fr%2fsites%2fdefault%2ffiles%2fimg%2f2016%2f06%2flas-vegans.jpg&ehk=jNAqbsGlMEyr2X0NLEV1ZSi27mbGXiVqPj9tQR%2bcD9A%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Ice Cream</h5>
+        <p class="card-text">.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th?id=OIF.9KzOK7fe%2bbOcNAhqFkwD3A&pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pasta</h5>
+        <p class="card-text">https://th.bing.com/th?id=OIF.9KzOK7fe%2bbOcNAhqFkwD3A&pid=ImgDet&rs=1</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.15555080795bbdd062f7597822713a71?rik=wsUfZROhwpcEDQ&riu=http%3a%2f%2fimages.agoramedia.com%2fcs%2feh%2fphotogallery-surprising-psoriasis-triggers-05-full.jpg&ehk=%2bUsnA3DQs99v4ppJoK%2f6McCxIFZQaDHCMt13K6Bg%2fnY%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pastries</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.farmfreshnuts.com/wp-content/uploads/2021/01/THU-JAN-8-FF.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pudding</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.d75acaf6c15e49385861d04d26a4e039?rik=4RFTDt2dwimKDA&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f5548e2316997a6ba1fd2abcb%2fmaster%2fpass%2f56389478_vegetarian-spring-rolls_1x1.jpg&ehk=zthdeiNA5RYSL4uvh%2fQJX6YMwTs8%2btlI2Jh0jltnkBg%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Veg Rolls</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://s1.1zoom.me/big0/466/Hamburger_French_fries_Vegetables_Black_background_540048_1280x853.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Burger</h5>
+        <p class="card-text">Melting Cheese Burger</p>
+        <a class="btn btn-primary" href="#" role="button"  >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://static.wixstatic.com/media/856a2d_8f8a66accb034a87a72a5dfa78e37920~mv2_d_1920_1281_s_2.jpg/v1/fill/w_370,h_247,al_c,q_80,usm_0.66_1.00_0.01/pizza-bg.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pizza</h5>
+        <p class="card-text">Onion+Capsicum+Sweet Corn+Korma Dip</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://thumbs.dreamstime.com/b/cup-espresso-coffee-beans-background-horizontal-top-view-52869852.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Coffee</h5>
+        <p class="card-text">Rich and creamy coffee</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://i1.wp.com/modernmealmakeover.com/wp-content/uploads/2020/05/thai-noodles-11-3.jpg?fit=1200%2C1200&ssl=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Noodles</h5>
+        <p class="card-text">Chilli garlic noodles includes noodles cooked with dry red chilies and red chili sauce for a vibrant, lightly spicy dish</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://missmabels.com.au/wp-content/uploads/2016/11/chips-and-sauce.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Fries</h5>
+        <p class="card-text">Potato strips deep fried and sprinkled with salt.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+        
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.ThXY4DCHV_mRI59eeCUMtQHaE8?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Sandwitch</h5>
+        <p class="card-text">Fresh veggies and schezwan sauce added in between the bread slices and grilled till crispy brown</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src=" https://th.bing.com/th/id/OIP.0mVwpavXSTLcYazs-3lK_AHaE7?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Pasta</h5>
+        <p class="card-text">Penne pasta with red tangy spicy tomato sauce, flavoured with oregano,basil and paprika.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://thumbs.dreamstime.com/b/cranberry-cocktail-mint-garnish-close-up-photo-glass-33442186.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/7e/94/4a/7e944aec46698e8cb94bd2c6614f8b9e.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Brownie</h5>
+        <p class="card-text">Small muffin infused with warm chocolate! Vintage Dessert</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+   -->
+
+
+
+
+
+   <div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp3724290.jpg" alt="">
+                <h6>All menus</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('pizza')" >
+                <img style="width: 100px; height:200 px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp3376127.jpg" alt="">
+                <h6>Pizza</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Burger')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp11905768.jpg" alt="">
+                <h6>Burger</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('Italian')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://th.bing.com/th/id/R.a3fbf2b7777793a17ef7b84a6d40fed3?rik=07Ndrldi4e7Neg&riu=http%3a%2f%2fstatic.businessinsider.com%2fimage%2f538798d3eab8eae80cb36475%2fimage.jpg&ehk=WMpCTGoO3Ex2QQ9MRjXTUOXDWTjE6hTflv9DBbKJQ6Y%3d&risl=&pid=ImgRaw&r=0" alt="">
+                <h6>Italian</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('South Indian')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/wp/wp7845828.jpg" alt="">
+                <h6>South Indian</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('North Indian')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://wallpapercave.com/dwp1x/wp10495609.jpg" alt="">
+                <h6>North Indian</h6>
+            </a>
+        </div>
+
+
+        <div class="item">
+            <a (click)="filter('Shakes')" >
+                <img style="width: 100px; margin-top: 5px;" src="https://images.pexels.com/photos/452737/pexels-photo-452737.jpeg?cs=srgb&dl=pexels-artem-beliaikin-452737.jpg&fm=jpg" alt="">
+                <h6>Shakes</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of menuList | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ₹{{item.price}}</p>
+                <a class="btn btn-primary" href="#" role="button" >Add to cart</a>
+                <button class="btn " (click)=addtocart(item)>Add to cart</button>
+
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+
+
+
+<div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.6wa6G0-LpM-K_ijB8IQqfgHaHa?pid=ImgDet&rs=1" class="card-img-top"  alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Brownie</h5>
+        <p class="card-text">Life is short, eat brownies first.</p>
+        <a class="btn btn-primary" routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs200</a>
+      
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.C7OCKQkhrA73uxCovRtIagHaHa?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Cold Coffee</h5>
+        <p class="card-text">When life gives you lemons, trade them for iced coffee</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs130</a>
+        
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.4c30510b264efab38ee186c458c6c684?rik=W51Fbn6dqPOGqQ&riu=http%3a%2f%2fmedia-cdn.tripadvisor.com%2fmedia%2fphoto-s%2f06%2f5d%2f25%2f90%2ffergburger.jpg&ehk=alGHMCQcQ3hgNBDKXLBqSVaU6w94kVVuiY3qvaCnj8Q%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Burger</h5>
+        <p class="card-text">hungry? let's meat up…</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price 120</a>
+        
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.47e00e05f8d6528583202cd96e18992a?rik=h%2fdgUexj7W7KZg&riu=http%3a%2f%2fimages4.fanpop.com%2fimage%2fphotos%2f20400000%2fPIZZA-pizza-20461160-1600-1200.jpg&ehk=Qw%2bjfQA1O8UbLkJhLixjt0h93BHTRzHfXScMqKg1h70%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pizza</h5>
+        <p class="card-text">Surround yourself with pizza, not negativity.</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs295</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.542a8e597d500439bf8789928c996011?rik=3dW7vfYZGoCRPw&riu=http%3a%2f%2fwww.ifairer.com%2farticle_image%2f1476160008-ifairer.jpg&ehk=6JqEDFTVl3VJhLaE%2fpIVqp%2bxmJNTgj9XMQ5zvntq7G4%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Veg Momos</h5>
+        <p class="card-text">Eat more demand more</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs80</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.t7w3M44oaefUbkvLP9E6TAAAAA?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Soup</h5>
+        <p class="card-text">Soup is not a meal, it’s a state of mind.</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs60</a>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://keeprecipes.com/sites/keeprecipes/files/15407_1452208506_0.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Tartufo</h5>
+        <p class="card-text">Eat Tartufo,Enjoy the best</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p><br> -->
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs200</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.0c1cbf3d98be84f039ee1fda9e595d36?rik=4ZKrFoveOXsy1g&riu=http%3a%2f%2fi.f1g.fr%2fmedia%2fext%2f1900x1900%2fmadame.lefigaro.fr%2fsites%2fdefault%2ffiles%2fimg%2f2016%2f06%2flas-vegans.jpg&ehk=jNAqbsGlMEyr2X0NLEV1ZSi27mbGXiVqPj9tQR%2bcD9A%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Ice Cream</h5>
+        <p class="card-text">Eat ice cream for daily happiness</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs180</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th?id=OIF.9KzOK7fe%2bbOcNAhqFkwD3A&pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pasta</h5>
+        <p class="card-text">Feeling saucy with this pasta dish!</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p><br> -->
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs230</a>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.15555080795bbdd062f7597822713a71?rik=wsUfZROhwpcEDQ&riu=http%3a%2f%2fimages.agoramedia.com%2fcs%2feh%2fphotogallery-surprising-psoriasis-triggers-05-full.jpg&ehk=%2bUsnA3DQs99v4ppJoK%2f6McCxIFZQaDHCMt13K6Bg%2fnY%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pastries</h5>
+        <p class="card-text">Nothing smells home like the smell of baking</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs90</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://www.farmfreshnuts.com/wp-content/uploads/2021/01/THU-JAN-8-FF.png" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pudding</h5>
+        <p class="card-text">The proof of the pudding is the eating</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs250</a>
+      <!-- </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.d75acaf6c15e49385861d04d26a4e039?rik=4RFTDt2dwimKDA&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f5548e2316997a6ba1fd2abcb%2fmaster%2fpass%2f56389478_vegetarian-spring-rolls_1x1.jpg&ehk=zthdeiNA5RYSL4uvh%2fQJX6YMwTs8%2btlI2Jh0jltnkBg%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Veg Rolls</h5>
+        <p class="card-text">Sugar, spice, and everything nice.</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs180</a>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://s1.1zoom.me/big0/466/Hamburger_French_fries_Vegetables_Black_background_540048_1280x853.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Burger</h5>
+        <p class="card-text">Melting Cheese Burger</p>
+        <a class="btn btn-primary" routerLink="/cart" role="button"  >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs350</a>
+      <!-- </div> -->
+      <div class="card-footer">
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://static.wixstatic.com/media/856a2d_8f8a66accb034a87a72a5dfa78e37920~mv2_d_1920_1281_s_2.jpg/v1/fill/w_370,h_247,al_c,q_80,usm_0.66_1.00_0.01/pizza-bg.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pizza</h5>
+        <p class="card-text">Onion+Capsicum+Sweet Corn+Korma Dip</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs340</a>
+      <!-- </div> -->
+     
+    </div>
+    <div class="card">
+      <ng-container *ngFor="let item of menuList">
+      
+      <img src="https://www.myweekly.co.uk/wp-content/uploads/sites/9/2018/06/iStock-814684194-coffee-x.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Coffee</h5>
+        <p class="card-text">Rich and creamy coffee</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs100</a>
+      </ng-container>
+      <!-- </div>  -->
+      <div class="card-footer">
+       
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src="https://i1.wp.com/modernmealmakeover.com/wp-content/uploads/2020/05/thai-noodles-11-3.jpg?fit=1200%2C1200&ssl=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Noodles</h5>
+        <p class="card-text">Chilli garlic noodles includes noodles cooked with dry red chilies and red chili sauce for a vibrant, lightly spicy dish</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs180</a>
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+    <div class="card">
+      <img src="https://missmabels.com.au/wp-content/uploads/2016/11/chips-and-sauce.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Fries</h5>
+        <p class="card-text">Potato strips deep fried and sprinkled with salt.</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs150</a>
+        
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.ThXY4DCHV_mRI59eeCUMtQHaE8?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Sandwitch</h5>
+        <p class="card-text">Fresh veggies and schezwan sauce added in between the bread slices and grilled till crispy brown</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs200</a>
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+  </div>
+
+
+
+  <div class="card-group">
+    <div class="card">
+      <img src=" https://th.bing.com/th/id/OIP.0mVwpavXSTLcYazs-3lK_AHaE7?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Pasta</h5>
+        <p class="card-text">Penne pasta with red tangy spicy tomato sauce, flavoured with oregano,basil and paprika.</p>
+        <a class="btn btn-primary"  routerLink="/cart" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs150</a>
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+    <div class="card">
+      <img src="https://thumbs.dreamstime.com/b/cranberry-cocktail-mint-garnish-close-up-photo-glass-33442186.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Mojito</h5>
+        <p class="card-text">Get it? "Lime" yours? Like "I'm," but it's lime? Hehe</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs210</a>
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/7e/94/4a/7e944aec46698e8cb94bd2c6614f8b9e.jpg" class="card-img-top" alt="...">
+      <!-- <div class="card-body"> -->
+        <h5 class="card-title">Brownie</h5>
+        <p class="card-text">Small muffin infused with warm chocolate! Vintage Dessert</p>
+        <a class="btn btn-primary" href="#" role="button" >Add to cart</a><br>
+        <a class="btn btn-danger" href="#" role="button" >Price rs230</a>
+      <!-- </div> -->
+      <!-- <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div> -->
+    </div>
+  </div>

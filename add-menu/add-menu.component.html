@@ -1,0 +1,69 @@
+<div class="container col-md-6">
+  
+    <h1 style="color:rgb(0, 0, 0);text-align: center;">Add Menu</h1>
+     <form (ngSubmit)="add()">
+      <div class="row">
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Menu Id</b> </label>
+         <input type="text" class="form-control" id="menuId" name="menuId" [(ngModel)]="menu.menuId">
+       </div>
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Menu Name</b></label>
+         <input type="text" class="form-control" id="menuName" name="menuName" [(ngModel)]="menu.title" >
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Price</b></label>
+         <input type="text" class="form-control" id="price" name="price" [(ngModel)]="menu.price" >
+       </div>
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Description</b></label>
+         <input type="text" class="form-control" id="description" name="description" [(ngModel)]="menu.description">
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Category</b></label>
+         <input type="text" class="form-control" id="category" name="category" [(ngModel)]="menu.category" >
+       </div>
+       <div class="col-md-6 mb-4">
+         <label for="exampleFormControlInput1" class="form-label"><b>Rating</b></label>
+         <input type="text" class="form-control" id="rating" name="rating" [(ngModel)]="menu.rating" >
+       </div>
+      </div>
+     <button type="submit" style=" background-color:rgb(0, 0, 0);color: white;font-weight: bolder;border: none;border-radius: 10px; height: 40px;width: 100px;">
+      <b>Add</b></button>
+
+
+
+      <!-- Add the link to a different page or route -->
+      <a [routerLink]="['/menus']" style="background-color:rgb(63, 168, 168);color:white;font-weight:bolder;border:none;border-radius:10px;height:40px;width:100px;display:block;text-align:center;margin-top:10px;">
+        <b>Back to Menus</b>
+      </a>
+  
+     </form>
+   </div>
+
+
+
+
+   <!-- <div class="container col-md-6">
+    <h1 style="color:rgb(31, 147, 143);text-align: center;">Add Menu</h1>
+    <form (ngSubmit)="add()">
+       Your form fields ... -->
+  
+      <!-- <button type="submit" style="background-color:rgb(63, 168, 168);color:white;font-weight:bolder;border:none;border-radius:10px;height:40px;width:100px;">
+        <b>Add</b>
+      </button> -->
+      
+      <!-- Add the link to a different page or route -->
+      <!-- <a [routerLink]="['/menus']" style="background-color:rgb(63, 168, 168);color:white;font-weight:bolder;border:none;border-radius:10px;height:40px;width:100px;display:block;text-align:center;margin-top:10px;">
+        <b>Back to Menus</b>
+      </a>
+    </form>
+  </div> -->
+   
+
+  
+
